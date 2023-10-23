@@ -20,7 +20,7 @@ class LaravelLangCountryServiceProvider extends ServiceProvider
             __DIR__ . '/../config/lang-country.php' => config_path('lang-country.php'),
         ], 'config');
 
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        // $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
 
         $this->app['router']->aliasMiddleware('lang_country', LangCountrySession::class);
 
