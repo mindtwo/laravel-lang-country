@@ -322,4 +322,11 @@ class LangCountry
 
         return json_decode(file_get_contents($resource), true);
     }
+
+    public function availableLanguagesAsSelectArray()
+    {
+        return collect($this->langSelectorHelper()['available'] ?? [])
+            ->mapWithKeys(fn ($item) => [$item['lang_country'] => $item['country_name']])
+            ->toArray();
+    }
 }
